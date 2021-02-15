@@ -1,0 +1,38 @@
+ <div>
+  <div>
+      <label>Name</label>
+      <input class="form-control" name="name" [(ngModel)]="newUser.name" #name="ngModel" required />
+      <div [hidden]="name.valid || name.untouched" class="alert">
+        Name not specified !
+      </div>
+  </div>
+  <div  >
+    <label>Surname</label>
+    <input class="form-control" name="surname" [(ngModel)]="newUser.surname" #surname="ngModel" required />
+    <div [hidden]="surname.valid || surname.untouched" class="alert">
+      Last name is not specified !
+    </div>
+</div>
+  <div  >
+      <label>Email</label>
+      <input class="form-control" name="email" [(ngModel)]="newUser.email" #email="ngModel"
+          required  email />
+      <div [hidden]="email.valid || email.untouched" class="alert">
+        Incorrect email !
+      </div>
+  </div>
+  <div   >
+      <label>Phone</label>
+      <input class="form-control" name="phone" [(ngModel)]="newUser.phone" #phone="ngModel"
+          required pattern="[0-9]{10}" />
+      <div [hidden]="phone.valid || phone.untouched" class="alert">
+        Incorrect number !
+      </div>
+  </div>
+  <div >
+      <button [disabled]="name.invalid || surname.invalid ||email.invalid || phone.invalid" routerLink="/new-advert" routerLinkActive="active" class="btn" (click)="addUser()"> Continue &rarr; </button>
+
+      <button routerLink="" routerLinkActive="active" class="btn"> &larr; Back </button>
+      <router-outlet></router-outlet>
+  </div>
+</div>

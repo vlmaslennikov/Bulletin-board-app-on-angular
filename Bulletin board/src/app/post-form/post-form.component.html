@@ -1,0 +1,12 @@
+<div>
+  <input type='text'  maxlength="45" placeholder='Title...'
+  [(ngModel)]='title'
+  >
+  <textarea type='text' placeholder='Text...'
+  [(ngModel)]='text'
+  ></textarea>
+
+  <button class="btn" (click)='addPost()'>Add</button>
+  <button routerLink="/authorization" routerLinkActive="active" class="btn">&larr; Back</button>
+      <router-outlet></router-outlet>
+</div>

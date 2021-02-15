@@ -1,0 +1,12 @@
+<div>
+  <h2>Your ad :</h2>
+</div>
+<app-post-form
+(onAdd)='updatePosts($event)'
+></app-post-form>
+<hr/>
+<app-post-body
+*ngFor='let newPostBlock of allPosts'
+[post]='newPostBlock'
+></app-post-body>
+

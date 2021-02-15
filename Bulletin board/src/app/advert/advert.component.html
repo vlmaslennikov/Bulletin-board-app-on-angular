@@ -1,0 +1,33 @@
+<div class="main-block">
+  <button class="btn btn-main" (click)="viewAllAdverts()"  >Show all ads</button>
+  <button class="btn btn-main" routerLink="/authorization" routerLinkActive="active" > Create ad</button>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="text-block"
+*ngFor='let advertBlock of allAdverts'
+>
+  <div class="title-block">
+    <h3 class="title">{{advertBlock.title}}</h3>
+    <div>
+      <p>
+        <span> {{advertBlock.day}} /</span>
+        <span> {{advertBlock.month}} /</span>
+        <span> {{advertBlock.year}} </span>
+      </p>
+      <p>
+        <span> {{advertBlock.hours}} :</span>
+        <span> {{advertBlock.minutes}} </span>
+      </p>
+    </div>
+  </div>
+
+  <p>{{advertBlock.text}}</p>
+  <p class="person">
+    <span> {{advertBlock.name}}  </span>
+    <span> {{advertBlock.surname}}  </span>
+    <span> {{advertBlock.email}}  </span>
+    <span> {{advertBlock.phone}}</span>
+  </p>
+
+</div>
